@@ -1,0 +1,42 @@
+{% templatetag openblock %} extends "{{ app_name }}/base.html" {% templatetag closeblock %}
+
+{% templatetag openblock %} block main {% templatetag closeblock %}
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>{{ app_name|title|pluralize }}</h1>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-12">
+                {% templatetag openblock %} if object_list {% templatetag closeblock %}
+                    <table class="table table-hover">
+                        <thead>
+                            <th>Options</th>
+                        </thead>
+                        <tbody>
+                            {% templatetag openblock %} for app_name in object_list {% templatetag closeblock %}
+                                <tr>
+                                    <td style="width: 15%;">
+                                        <a href="{% templatetag openblock %} url 'app_name:update' slug=app_name.slug {% templatetag closeblock %}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Editar</a>
+                                        <a href="{% templatetag openblock %} url 'app_name:delete' slug=app_name.slug {% templatetag closeblock %}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Excluir</a>
+                                    </td>
+                                </tr>
+                                {% templatetag openblock %} endfor {% templatetag closeblock %}
+                        </tbody>
+                    </table>
+                {% templatetag openblock %} else {% templatetag closeblock %}
+                    <div class="text-center">
+                        <h2>{{ app_name }} empty</h2>
+                    </div>
+                {% templatetag openblock %} endif {% templatetag closeblock %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <a href="{% templatetag openblock %} url 'app_name:new' {% templatetag closeblock %}" class="btn btn-success btn-lg">New {{ app_name }}</a> or
+                <a href="{% templatetag openblock %} url 'home' {% templatetag closeblock %}" class="btn btn-primary btn-lg">Cancel</a></div>
+        </div>
+    </div>
+{% templatetag openblock %} endblock main {% templatetag closeblock %}

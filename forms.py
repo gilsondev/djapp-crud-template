@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+
+from django import forms
+
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Div, Submit, Fieldset, Field
+from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
+
+from .models import {{ app_name|title }}
+
+
+class {{ app_name|title }}Form(forms.ModelForm):
+    helper = FormHelper()
+    helper.layout = Layout()
+
+    class Meta:
+        model = {{ app_name|title }}

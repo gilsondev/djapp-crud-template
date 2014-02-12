@@ -1,0 +1,14 @@
+{% templatetag openblock %} extends "{{ app_name }}/base.html" {% templatetag closeblock %}
+{% templatetag openblock %} load crispy_forms_tags {% templatetag closeblock %}
+
+{% templatetag openblock %} block main {% templatetag closeblock %}
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>New {{ app_name|title }}</h1>
+        </div>
+    </div>
+    <br>
+    {% templatetag openblock %} crispy form {% templatetag closeblock %}
+</div>
+{% templatetag openblock %} endblock main {% templatetag closeblock %}
