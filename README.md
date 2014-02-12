@@ -7,7 +7,7 @@ This template was created for agile development in the CRUD applications, using 
 1. Create app with this command:
 
 ```bash
-$ python manage.py startapp --template ~/Projects/djapp-crud --extension=py,html <app_name>
+$ python manage.py startapp --template https://github.com/gilsondev/djapp-crud-template/archive/master.zip --extension=py,html <app_name>
 ```
 
 ### Pre requisites
