@@ -56,7 +56,8 @@ class {{ app_name|title }}NewTest(TestCase):
 
 class {{ app_name|title }}EditTest(TestCase):
     def setUp(self):
-        self.url = '/{{ app_name }}/%s/update/' % (self.{{ app_name }}.slug,)
+        self.url = reverse('{{ app_name }}:update',
+                           kwargs={'slug': self.course.slug})
         self.resp = self.client.get(self.url)
 
     def test_get(self):
@@ -86,7 +87,8 @@ class {{ app_name|title }}EditTest(TestCase):
 
 class {{ app_name|title }}DeleteTest(TestCase):
     def setUp(self):
-        self.url = '/{{ app_name }}/%s/delete/' % (self.{{ app_name }}.slug,)
+        self.url = reverse('{{ app_name }}:delete',
+                           kwargs={'slug': self.course.slug})
         self.resp = self.client.get(self.url)
 
     def test_get(self):
