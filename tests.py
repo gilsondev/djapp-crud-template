@@ -5,6 +5,8 @@ import datetime
 from django.test import TestCase
 from django.db.models.query import QuerySet
 from django.core.urlresolvers import reverse
+from django.template.defaultfilters import slugify
+
 
 from .models import {{ app_name|title }}
 from .forms import {{ app_name|title }}Form
@@ -119,6 +121,11 @@ class {{ app_name|title }}ModelTest(TestCase):
     def test_create(self):
         """Should create correctly"""
         self.assertEqual(self.{{ app_name }}.pk, 1)
+
+    def test_slug(self):
+        """Should create slug automatically"""
+        # TODO: Insert field to generate slug
+        self.assertEquals(self.{{ app_name }}.slug, slugify(self.{{ app_name }}))
 
     def test_unicode(self):
         self.assertEqual(unicode(self.{{ app_name }}), u"{{ app_name|title }}")
