@@ -10,5 +10,17 @@
     </div>
     <br>
     {% templatetag openblock %} crispy form {% templatetag closeblock %}
+
+    <div class="container">
+        <h2>Edit {{ app_name|title }}</h2>
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    {% templatetag openblock %} crispy form {% templatetag closeblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 {% templatetag openblock %} endblock main {% templatetag closeblock %}
