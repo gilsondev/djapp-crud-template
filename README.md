@@ -10,9 +10,10 @@ This template was created for agile development in the CRUD applications, using 
 $ python manage.py startapp --template https://github.com/gilsondev/djapp-crud-template/archive/master.zip --extension=py,html <app_name>
 ```
 
-### Pre requisites
+### Dependency
 
  - django-crispy-forms: [Source Code](https://github.com/maraujop/django-crispy-forms)
+ - django-extra-views: [Source Code](https://github.com/AndrewIngram/django-extra-views)
 
 
 ### Structure of app
