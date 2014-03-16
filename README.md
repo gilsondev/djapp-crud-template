@@ -14,6 +14,7 @@ $ python manage.py startapp --template https://github.com/gilsondev/djapp-crud-t
 
  - django-crispy-forms: [Source Code](https://github.com/maraujop/django-crispy-forms)
  - django-extra-views: [Source Code](https://github.com/AndrewIngram/django-extra-views)
+ - bootstrap-dialog: [Source Code](https://github.com/nakupanda/bootstrap3-dialog)
 
 
 ### Structure of app

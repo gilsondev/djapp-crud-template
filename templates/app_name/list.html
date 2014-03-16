@@ -38,7 +38,7 @@
                                 <tr>
                                     <td style="width: 15%;">
                                         <a href="{% templatetag openblock %} url 'app_name:update' slug=app_name.slug {% templatetag closeblock %}" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Editar</a>
-                                        <a href="{% templatetag openblock %} url 'app_name:delete' slug=app_name.slug {% templatetag closeblock %}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Excluir</a>
+                                        <a href="{% templatetag openblock %} url 'app_name:delete' slug=app_name.slug {% templatetag closeblock %}" class="btn btn-danger btn-xs deleteDialog"><i class="fa fa-trash-o"></i> Excluir</a>
                                     </td>
                                 </tr>
                                 {% templatetag openblock %} endfor {% templatetag closeblock %}
@@ -58,3 +58,13 @@
         </div>
     </div>
 {% templatetag openblock %} endblock main {% templatetag closeblock %}
+
+{% templatetag openblock %} block scripts {% templatetag closeblock %}
+    {{ block.super }}
+    <script src="{% templatetag openblock %} static 'js/modal.plugin.js' {% templatetag closeblock %}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.deleteDialog').deleteDialog();
+        });
+    </script>
+{% templatetag openblock %} endblock scripts {% templatetag closeblock %}
