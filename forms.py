@@ -11,7 +11,16 @@ from .models import {{ app_name|title }}
 
 class {{ app_name|title }}Form(forms.ModelForm):
     helper = FormHelper()
-    helper.layout = Layout()
+    helper.layout = Layout(
+        Div(
+            Submit('save', _(u"Save {{ app_name|title }}"),
+                   css_name='btn btn-lg btn-success'),
+            HTML('<a href="{% url "{{ app_name }}:list" %}" class="btn '
+                 'btn-default">Back</a>'),
+            css_name='text-center'
+        )
+    )
 
     class Meta:
         model = {{ app_name|title }}
+        exclude = ('slug',)
